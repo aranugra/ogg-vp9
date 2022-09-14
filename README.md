@@ -35,7 +35,8 @@ More detail is written in [this document](OggVP9.md).
 
 ## 2. Building code
 
-My implementation is just a small patch for FFmpeg. All patches licensed under LGPL same as FFmpeg.
+My implementation is just a small patch for FFmpeg. All patches licensed under LGPL v2.1 or
+later, or the same license as FFmpeg this patch applied to.
 However the code is _experimental_ and might contains serious bugs. Use it at your own risk.
 
 ### 2.1. Dependencies
@@ -70,9 +71,9 @@ Configure and build FFmpeg
 
 Then add `$OGGVP9_PREFIX/bin` to path if necessary.
 
-### 2.3. Prebuilt version
+### 2.4. Binary Packages
 
-For convenience, prebuilt version eventualy will be available on the release page, at least for Windows platform.
+Compiled packages for Win64 are available on the [release page](https://github.com/aranugra/ogg-vp9/releases).
 
 ## 3. Encoding & Playing OggVP9
 
