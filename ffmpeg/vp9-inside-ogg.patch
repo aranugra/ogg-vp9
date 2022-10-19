@@ -11,7 +11,7 @@ index 6c6b779080..94465d4a32 100644
                                              vorbiscomment.o  \
                                              flac_picture.o
 diff --git a/libavformat/oggdec.c b/libavformat/oggdec.c
-index 3b19e0bd89..89fe2b0cc4 100644
+index 3b19e0bd89..31216506e9 100644
 --- a/libavformat/oggdec.c
 +++ b/libavformat/oggdec.c
 @@ -50,6 +50,7 @@ static const struct ogg_codec * const ogg_codecs[] = {
@@ -22,11 +22,12 @@ index 3b19e0bd89..89fe2b0cc4 100644
      &ff_old_dirac_codec,
      &ff_old_flac_codec,
      &ff_ogm_video_codec,
-@@ -795,6 +796,33 @@ static int64_t ogg_calc_pts(AVFormatContext *s, int idx, int64_t *dts)
+@@ -795,6 +796,34 @@ static int64_t ogg_calc_pts(AVFormatContext *s, int idx, int64_t *dts)
      return pts;
  }
  
-+static unsigned vp9_keyframe_flag(AVFormatContext *s, uint8_t *data) {
++static unsigned vp9_keyframe_flag(AVFormatContext *s, uint8_t *data)
++{
 +    unsigned frame_marker, version, high, show_ext_frame;
 +    unsigned frame_type = 1; /* 1 is inter frame */
 +    unsigned header = data[0];
@@ -56,7 +57,7 @@ index 3b19e0bd89..89fe2b0cc4 100644
  static void ogg_validate_keyframe(AVFormatContext *s, int idx, int pstart, int psize)
  {
      struct ogg *ogg = s->priv_data;
-@@ -807,6 +835,10 @@ static void ogg_validate_keyframe(AVFormatContext *s, int idx, int pstart, int p
+@@ -807,6 +836,10 @@ static void ogg_validate_keyframe(AVFormatContext *s, int idx, int pstart, int p
          break;
          case AV_CODEC_ID_VP8:
              invalid = !!(os->pflags & AV_PKT_FLAG_KEY) != !(os->buf[pstart] & 1);
