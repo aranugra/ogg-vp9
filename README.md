@@ -32,6 +32,10 @@ From there I am implementing OggVP9 mostly using the same mapping as OggVP8 with
 
 More detail is written in [this document](OggVP9.md).
 
+> However it should be noted that it is not offical OggVP9 mapping or anything.
+> What I am doing is just taking existing OggVP8 specification, experimenting
+> what is work for VP9 and documenting it.
+
 
 ## 2. Building code
 
